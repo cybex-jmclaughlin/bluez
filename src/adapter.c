@@ -4545,7 +4545,7 @@ static void adapter_remove(struct btd_adapter *adapter)
 	adapter->devices = NULL;
 
 	unload_drivers(adapter);
-	btd_adapter_gatt_server_stop(adapter);
+	// Removed GATT Server btd_adapter_gatt_server_stop(adapter);
 
 	g_slist_free(adapter->pin_callbacks);
 	adapter->pin_callbacks = NULL;
@@ -6532,7 +6532,7 @@ static int adapter_register(struct btd_adapter *adapter)
 		agent_unref(agent);
 	}
 
-	btd_adapter_gatt_server_start(adapter);
+	// Removed GATT Server btd_adapter_gatt_server_start(adapter);
 
 	load_config(adapter);
 	fix_storage(adapter);
